@@ -1,22 +1,16 @@
-import "bootstrap";
 import "./style.css";
+let pronoun = ["the", "our"];
+let adj = ["great", "big"];
+let noun = ["jogger", "racoon"];
+let printHtml = "";
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
-
-window.onload = function() {
-  let pronoun = ["the", "our", "hola"];
-  let adj = ["great", "big", "mundo"];
-  let noun = ["jogger", "racoon", "soyJesus"];
-  let extensions = [".com", ".net", ".es"];
-
-  for (let a = 0; a < pronoun.length; a++) {
-    for (let b = 0; b < adj.length; b++) {
-      for (let c = 0; c < noun.length; c++)
-        for (let d = 0; d < noun.length; d++) {
-          let result = pronoun[a] + adj[b] + noun[c] + extensions[d];
-          console.log(result);
-        }
+for (let iAdj of adj) {
+  for (let iPronoun of pronoun) {
+    for (let iNoun of noun) {
+      let print = `${iPronoun}${iAdj}${iNoun}.com`;
+      console.log(print);
+      printHtml += print + " <br>";
     }
   }
-};
+}
+document.querySelector("#excuse").innerHTML = printHtml;
